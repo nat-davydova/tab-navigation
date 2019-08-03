@@ -189,12 +189,25 @@ $panels-bg-color: rgba(0,0,0,.15);
   }
 }
 
+.tabs__panel-card--spaced-between {
+  justify-content: space-between;
+}
+
 .tabs__panel-avatar {
   flex-shrink: 0;
   width: 100px;
   height: 100px;
   
   border-radius: 50%;
+  background-color: $panels-bg-color;
+}
+
+.tabs__panel-img {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  
+  border-radius: 4px;
   background-color: $panels-bg-color;
 }
 
