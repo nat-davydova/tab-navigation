@@ -71,6 +71,7 @@ body a {
 }
 
 .tabs__nav-list {
+  position: relative;
   display: flex;
   list-style-type: none;
 }
@@ -78,4 +79,10 @@ body a {
 .tabs__nav-item {
   padding: 15px;
   cursor: pointer;
+}
+.tabs__nav-item:nth-child(5) {
+  opacity: .4;
+}
+.tabs__nav-item:nth-child(6) {
+  opacity: .4;
 }

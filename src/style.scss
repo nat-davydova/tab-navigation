@@ -6,6 +6,14 @@
   transition-delay: $delay;
 }
 
+@mixin position-absolute ($top: null, $left: null, $right: null, $bottom: null) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+}
+
 //variables
 $theme-font-color: #2c2c2c;
 
@@ -107,7 +115,16 @@ body {
 }
 
 //tabs nav styles
+$theme-accent-color1: #119DA4;
+$theme-accent-color2: #C45BAA;
+$theme-accent-color3: #4DAA57;
+$theme-accent-color4: #6184D8;
+$theme-accent-color5: #F3B61F;
+$theme-accent-color6: #9882AC;
+
 .tabs__nav-list {
+  position: relative;
+  
   display: flex;
   
   list-style-type: none;
@@ -117,4 +134,12 @@ body {
   padding: 15px;
   
   cursor: pointer;
+  
+  &:nth-child(5) {
+    opacity: .4;
+  }
+  
+  &:nth-child(6) {
+    opacity: .4;
+  }
 }
