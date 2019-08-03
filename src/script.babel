@@ -40,7 +40,7 @@ const findActiveItemParams = (activeItemIndex) => {
   const activeTab = DOM.tabsNavItems[activeItemIndex];
   
   //width of elem
-  const activeItemWidth = activeTab.offsetWidth;
+  const activeItemWidth = activeTab.offsetWidth - 1;
   
   //left coord in the tab navigation
   const activeItemOffset_left = activeTab.offsetLeft;
@@ -85,4 +85,32 @@ window.addEventListener('load', () => {
   
   //setting styles to the decoration elem
   styleDecorElem(decorElem, decorWidth, decorOffset);
+});
+
+//click nav item function
+DOM.tabsNav.addEventListener('click', e => {
+  
+  const navElemClass = 'tabs__nav-item';
+  
+  //check if we click on a nav item
+  if(e.target.classList.contains(navElemClass)) {
+    
+    const clickedTab = e.target;
+    
+    //set active nav item
+    setActiveItem(clickedTab);
+    
+    //find active tab
+    const activeItem = findActiveItem();
+
+    //find active tab params
+    const [decorWidth, decorOffset] = findActiveItemParams(activeItem);
+    
+    //setting styles to the decoration elem
+    const decorElem = document.querySelector('.js-decoration');
+    
+    styleDecorElem(decorElem, decorWidth, decorOffset);
+    
+  }
+  
 });

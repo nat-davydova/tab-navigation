@@ -76,12 +76,16 @@ body a {
 }
 
 .tabs__nav-decoration {
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   background-color: #119DA4;
-  border-radius: 4px;
+  border-radius: 3px;
   z-index: 1;
 }
 
