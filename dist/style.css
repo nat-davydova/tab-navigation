@@ -114,7 +114,23 @@ body a {
 }
 
 .tabs__panels {
+  position: relative;
   margin-top: 30px;
+}
+
+.tabs__panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateX(calc(100% + 15px + 5px));
+          transform: translateX(calc(100% + 15px + 5px));
+  width: 100%;
+  opacity: 0;
+}
+.tabs__panel.js-active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
 }
 
 .tabs__panel-card {

@@ -109,11 +109,12 @@ body {
 }
 
 //tabs styles
+$tabs-padding: 15px;
 
 .tabs {
   position: relative;
   
-  padding: 15px;
+  padding: $tabs-padding;
   height: 100%;
   
   overflow: hidden;
@@ -171,7 +172,26 @@ $theme-accent-color: #119DA4;
 $panels-bg-color: rgba(0,0,0,.15);
 
 .tabs__panels {
+  position: relative;
+  
   margin-top: 30px;
+}
+
+.tabs__panel {
+  @include position-absolute($top: 0, $left: 0);
+  
+  transform: translateX(calc(100% + #{$tabs-padding} + 5px));
+  
+  width: 100%;
+  
+  opacity: 0;
+  
+  //active panel styles
+  &.js-active {
+    transform: translateX(0);
+    
+    opacity: 1;
+  }
 }
 
 .tabs__panel-card {
