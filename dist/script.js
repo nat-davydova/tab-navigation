@@ -124,6 +124,8 @@ DOM.tabsNav.addEventListener('click', e => {
 
     const clickedTab = e.target;
 
+    const activeItemIndex = Array.from(DOM.tabsNavItems).indexOf(clickedTab);
+
     //set active nav item
     setActiveItem(clickedTab);
 
@@ -137,6 +139,12 @@ DOM.tabsNav.addEventListener('click', e => {
     const decorElem = document.querySelector('.js-decoration');
 
     styleDecorElem(decorElem, decorWidth, decorOffset);
+
+    //find active panel
+    findActivePanel(activeItemIndex);
+
+    //set active panel
+    setActivePanel(activeItemIndex);
 
   }
 
