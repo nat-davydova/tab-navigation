@@ -111,14 +111,13 @@ body {
 //tabs styles
 
 .tabs {
+  position: relative;
+  
   overflow: hidden;
 }
 
 //tabs nav styles
-$theme-accent-color1: #119DA4;
-$theme-accent-color2: #C45BAA;
-$theme-accent-color3: #4DAA57;
-$theme-accent-color4: #6184D8;
+$theme-accent-color: #119DA4;
 
 .tabs__nav {
   position: relative;
@@ -130,7 +129,10 @@ $theme-accent-color4: #6184D8;
   
   height: 100%;
   
+  background-color: $theme-accent-color;
   border-radius: 4px;
+  
+  z-index: 1;
 }
 
 .tabs__nav-list {
@@ -140,10 +142,19 @@ $theme-accent-color4: #6184D8;
   justify-content: space-between;
   
   list-style-type: none;
+  
+  z-index: 5;
 }
 
 .tabs__nav-item {
+  @include transition-mix();
+  
   padding: 15px;
   
   cursor: pointer;
+  
+  //active styles
+  &.js-active {
+    color: #fff;
+  }
 }

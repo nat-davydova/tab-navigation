@@ -4,7 +4,7 @@ const DOM = {
 
 
 //find active element
-const findActiveTab = () => {
+const findActiveItem = () => {
 
   let activeIndex = 0;
 
@@ -21,6 +21,21 @@ const findActiveTab = () => {
 
 };
 
+//find active elements parameters: left coord, width
+const findActiveItemParams = activeItemIndex => {
+
+  const activeTab = DOM.tabsNavItems[activeItemIndex];
+
+  //width of elem
+  const activeItemWidth = activeTab.offsetWidth;
+
+  //left coord in the tab navigation
+  const activeItemOffset_left = activeTab.offsetLeft;
+
+  return [activeItemWidth, activeItemOffset_left];
+
+};
+
 //appending decoration block to an active element
 const appendDecorationNav = () => {
 
@@ -32,17 +47,18 @@ const appendDecorationNav = () => {
 
   //appending element to navigation
   DOM.tabsNav.append(decorationElem);
-
-
 };
 
 //onload function
 window.addEventListener('load', () => {
 
   //find active tab
-  const activeTab = findActiveTab();
+  const activeItem = findActiveItem();
+
+  //find active tab params
+  const [decorWidth, decorOffset] = findActiveItemParams(activeItem);
 
   //appending decoration element to an active elem
-  appendDecorationNav();
+  appendDecorationNav(decorWidth, decorOffset);
 
 });
