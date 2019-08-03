@@ -73,6 +73,7 @@ body a {
 .tabs__nav-list {
   position: relative;
   display: flex;
+  justify-content: space-between;
   list-style-type: none;
 }
 
