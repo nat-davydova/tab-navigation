@@ -219,6 +219,10 @@ $panels-bg-color: rgba(0,0,0,.15);
     margin-left: 0;
   }
   
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+  
   &:before,
   &:after {
     display: block;
