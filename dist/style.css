@@ -76,14 +76,13 @@ body a {
 }
 
 .tabs__nav-decoration {
-  transition-property: all;
-  transition-duration: 0.2s;
-  transition-timing-function: linear;
-  transition-delay: 0s;
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
+  transition: width .2s linear 0s, -webkit-transform .2s ease-out 0s;
+  transition: width .2s linear 0s, transform .2s ease-out 0s;
+  transition: width .2s linear 0s, transform .2s ease-out 0s, -webkit-transform .2s ease-out 0s;
   background-color: #119DA4;
   border-radius: 3px;
   z-index: 1;
@@ -106,5 +105,9 @@ body a {
   cursor: pointer;
 }
 .tabs__nav-item.js-active {
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  transition-delay: 0.1s;
   color: #fff;
 }

@@ -125,13 +125,14 @@ $theme-accent-color: #119DA4;
 
 //nav decoration is appended by js
 .tabs__nav-decoration {
-  @include transition-mix();
-  
   position: absolute;
   top: 0;
   left: 0;
   
   height: 100%;
+  
+  transition: width .2s linear 0s,
+              transform .2s ease-out 0s;
   
   background-color: $theme-accent-color;
   border-radius: 3px;
@@ -151,7 +152,7 @@ $theme-accent-color: #119DA4;
 }
 
 .tabs__nav-item {
-  @include transition-mix();
+  @include transition-mix($delay: 0s);
   
   padding: 15px;
   
@@ -159,6 +160,7 @@ $theme-accent-color: #119DA4;
   
   //active styles
   &.js-active {
+    @include transition-mix($delay: .1s);
     color: #fff;
   }
 }
