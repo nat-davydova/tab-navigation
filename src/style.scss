@@ -120,6 +120,19 @@ $theme-accent-color2: #C45BAA;
 $theme-accent-color3: #4DAA57;
 $theme-accent-color4: #6184D8;
 
+.tabs__nav {
+  position: relative;
+}
+
+//nav decoration is appended by js
+.tabs__nav-decoration {
+  position: absolute;
+  
+  height: 100%;
+  
+  border-radius: 4px;
+}
+
 .tabs__nav-list {
   position: relative;
   
@@ -133,12 +146,4 @@ $theme-accent-color4: #6184D8;
   padding: 15px;
   
   cursor: pointer;
-  
-  &:nth-child(5) {
-    opacity: .4;
-  }
-  
-  &:nth-child(6) {
-    opacity: .4;
-  }
 }

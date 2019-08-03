@@ -70,6 +70,16 @@ body a {
   overflow: hidden;
 }
 
+.tabs__nav {
+  position: relative;
+}
+
+.tabs__nav-decoration {
+  position: absolute;
+  height: 100%;
+  border-radius: 4px;
+}
+
 .tabs__nav-list {
   position: relative;
   display: flex;
@@ -80,10 +90,4 @@ body a {
 .tabs__nav-item {
   padding: 15px;
   cursor: pointer;
-}
-.tabs__nav-item:nth-child(5) {
-  opacity: .4;
-}
-.tabs__nav-item:nth-child(6) {
-  opacity: .4;
 }
