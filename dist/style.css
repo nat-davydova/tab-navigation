@@ -122,14 +122,16 @@ body a {
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-transform: translateX(calc(100% + 15px + 5px));
-          transform: translateX(calc(100% + 15px + 5px));
+  transition: none;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
   width: 100%;
   opacity: 0;
 }
 .tabs__panel.js-active {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  transition: all .25s linear 0s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
   opacity: 1;
 }
 

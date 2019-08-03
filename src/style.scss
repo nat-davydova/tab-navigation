@@ -180,7 +180,9 @@ $panels-bg-color: rgba(0,0,0,.15);
 .tabs__panel {
   @include position-absolute($top: 0, $left: 0);
   
-  transform: translateX(calc(100% + #{$tabs-padding} + 5px));
+  transition: none;
+  
+  transform: scale(.8);
   
   width: 100%;
   
@@ -188,7 +190,9 @@ $panels-bg-color: rgba(0,0,0,.15);
   
   //active panel styles
   &.js-active {
-    transform: translateX(0);
+    transition: all .25s linear 0s;
+    
+    transform: scale(1);
     
     opacity: 1;
   }
