@@ -3,6 +3,19 @@ const DOM = {
   tabsNavItems: document.querySelectorAll('.tabs__nav-item') };
 
 
+//set active element
+const setActiveItem = elem => {
+
+  DOM.tabsNavItems.forEach(el => {
+
+    el.classList.remove('js-active');
+
+  });
+
+  elem.classList.add('js-active');
+
+};
+
 //find active element
 const findActiveItem = () => {
 
@@ -37,7 +50,7 @@ const findActiveItemParams = activeItemIndex => {
 };
 
 //appending decoration block to an active element
-const appendDecorationNav = (decorWidth, decorOffset) => {
+const appendDecorationNav = () => {
 
   //creating decoration element
   let decorationElem = document.createElement('div');
@@ -49,8 +62,13 @@ const appendDecorationNav = (decorWidth, decorOffset) => {
   DOM.tabsNav.append(decorationElem);
 
   //appending styles to decoration element
-  decorationElem.style.width = `${decorWidth}px`;
-  decorationElem.style.left = `${decorOffset}px`;
+  return decorationElem;
+};
+
+//appending styles to decoration element
+const styleDecorElem = (elem, decorWidth, decorOffset) => {
+  elem.style.width = `${decorWidth}px`;
+  elem.style.transform = `translateX(${decorOffset}px)`;
 };
 
 //onload function
@@ -63,6 +81,8 @@ window.addEventListener('load', () => {
   const [decorWidth, decorOffset] = findActiveItemParams(activeItem);
 
   //appending decoration element to an active elem
-  appendDecorationNav(decorWidth, decorOffset);
+  const decorElem = appendDecorationNav();
 
+  //setting styles to the decoration elem
+  styleDecorElem(decorElem, decorWidth, decorOffset);
 });
