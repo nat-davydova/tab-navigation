@@ -11,6 +11,12 @@ $theme-font-color: #2c2c2c;
 
 
 //common styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font: {
     family: 'Lato', sans-serif;
@@ -58,7 +64,15 @@ body {
 }
 
 .header__title {
+  margin-bottom: 30px;
+  
   font: {
     weight: 500;
   }
+}
+
+//content styles
+.content {
+  max-width: 700px;
+  margin: auto;
 }

@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Lato', sans-serif;
   color: #2c2c2c;
@@ -35,5 +41,11 @@ body a {
 }
 
 .header__title {
+  margin-bottom: 30px;
   font-weight: 500;
+}
+
+.content {
+  max-width: 700px;
+  margin: auto;
 }
