@@ -37,7 +37,7 @@ const findActiveItemParams = activeItemIndex => {
 };
 
 //appending decoration block to an active element
-const appendDecorationNav = () => {
+const appendDecorationNav = (decorWidth, decorOffset) => {
 
   //creating decoration element
   let decorationElem = document.createElement('div');
@@ -45,8 +45,12 @@ const appendDecorationNav = () => {
   decorationElem.classList.add('tabs__nav-decoration');
   decorationElem.classList.add('js-decoration');
 
-  //appending element to navigation
+  //appending decoration element to navigation
   DOM.tabsNav.append(decorationElem);
+
+  //appending styles to decoration element
+  decorationElem.style.width = `${decorWidth}px`;
+  decorationElem.style.left = `${decorOffset}px`;
 };
 
 //onload function
