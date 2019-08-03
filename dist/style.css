@@ -61,13 +61,14 @@ body a {
 .content__inner {
   width: 375px;
   height: 550px;
-  padding: 15px;
   margin: auto;
   box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
 }
 
 .tabs {
   position: relative;
+  padding: 15px;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -108,6 +109,46 @@ body a {
   transition-property: all;
   transition-duration: 0.2s;
   transition-timing-function: linear;
-  transition-delay: 0.1s;
+  transition-delay: 0.05s;
   color: #fff;
+}
+
+.tabs__panels {
+  margin-top: 30px;
+}
+
+.tabs__panel-card {
+  display: flex;
+  margin-bottom: 30px;
+  padding: 15px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+.tabs__panel-card:last-child {
+  margin-bottom: 0;
+}
+
+.tabs__panel-avatar {
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.tabs__panel-content {
+  width: 100%;
+  margin-left: 30px;
+}
+.tabs__panel-content:first-child {
+  margin-left: 0;
+}
+.tabs__panel-content:before, .tabs__panel-content:after {
+  display: block;
+  width: 100%;
+  height: 20px;
+  content: '';
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.tabs__panel-content:before {
+  margin-bottom: 15px;
 }
