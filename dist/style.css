@@ -6,6 +6,7 @@
 
 body {
   font-family: 'Lato', sans-serif;
+  font-size: 16px;
   color: #2c2c2c;
 }
 body a {
@@ -50,10 +51,31 @@ body a {
   margin: auto;
 }
 
+.content__title {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+}
+
 .content__inner {
   width: 375px;
-  height: 600px;
+  height: 550px;
   padding: 15px;
   margin: auto;
   box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+}
+
+.tabs {
+  overflow: hidden;
+}
+
+.tabs__nav-list {
+  display: flex;
+  list-style-type: none;
+}
+
+.tabs__nav-item {
+  padding: 15px;
+  cursor: pointer;
 }
