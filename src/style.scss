@@ -6,6 +6,14 @@
   transition-delay: $delay;
 }
 
+@mixin position-absolute ($top: null, $left: null, $right: null, $bottom: null) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+}
+
 //variables
 $theme-font-color: #2c2c2c;
 
@@ -20,6 +28,7 @@ $theme-font-color: #2c2c2c;
 body {
   font: {
     family: 'Lato', sans-serif;
+    size: 16px;
   }
   color: $theme-font-color;
   
@@ -77,9 +86,19 @@ body {
   margin: auto;
 }
 
+.content__title {
+  margin-bottom: 20px;
+  
+  font: {
+    size: 18px;
+    weight: 500;
+  }
+  text-align: center;
+}
+
 .content__inner {
   width: 375px;
-  height: 600px;
+  height: 550px;
   padding: 15px;
   margin: auto;
   
@@ -87,4 +106,59 @@ body {
     0 8px 17px 2px rgba(0,0,0,0.14), 
     0 3px 14px 2px rgba(0,0,0,0.12), 
     0 5px 5px -3px rgba(0,0,0,0.2);
+}
+
+//tabs styles
+
+.tabs {
+  position: relative;
+  
+  overflow: hidden;
+}
+
+//tabs nav styles
+$theme-accent-color: #119DA4;
+
+.tabs__nav {
+  position: relative;
+}
+
+//nav decoration is appended by js
+.tabs__nav-decoration {
+  @include transition-mix();
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  height: 100%;
+  
+  background-color: $theme-accent-color;
+  border-radius: 3px;
+  
+  z-index: 1;
+}
+
+.tabs__nav-list {
+  position: relative;
+  
+  display: flex;
+  justify-content: space-between;
+  
+  list-style-type: none;
+  
+  z-index: 5;
+}
+
+.tabs__nav-item {
+  @include transition-mix();
+  
+  padding: 15px;
+  
+  cursor: pointer;
+  
+  //active styles
+  &.js-active {
+    color: #fff;
+  }
 }

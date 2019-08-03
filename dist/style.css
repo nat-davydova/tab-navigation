@@ -6,6 +6,7 @@
 
 body {
   font-family: 'Lato', sans-serif;
+  font-size: 16px;
   color: #2c2c2c;
 }
 body a {
@@ -50,10 +51,60 @@ body a {
   margin: auto;
 }
 
+.content__title {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+}
+
 .content__inner {
   width: 375px;
-  height: 600px;
+  height: 550px;
   padding: 15px;
   margin: auto;
   box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+}
+
+.tabs {
+  position: relative;
+  overflow: hidden;
+}
+
+.tabs__nav {
+  position: relative;
+}
+
+.tabs__nav-decoration {
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #119DA4;
+  border-radius: 3px;
+  z-index: 1;
+}
+
+.tabs__nav-list {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  z-index: 5;
+}
+
+.tabs__nav-item {
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+  padding: 15px;
+  cursor: pointer;
+}
+.tabs__nav-item.js-active {
+  color: #fff;
 }
